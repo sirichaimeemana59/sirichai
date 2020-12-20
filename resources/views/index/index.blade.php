@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-{{ csrf_token() }}
+<input type="hidden" value="{{ csrf_token() }}">
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-3 sidenav">

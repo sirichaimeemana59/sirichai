@@ -1,23 +1,32 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class Users extends Model
+
+class User extends Authenticatable implements JWTSubject
 {
-    protected $primaryKey ='id';
-    protected $table='users';
+    use HasFactory, Notifiable;
+
     protected $fillable = [
+        'firstname',
+        'lastname',
+        'phone',
         'email',
         'password',
     ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -26,10 +35,8 @@ class Users extends Model
         return $this->getKey();
     }
 
+
     public function getJWTCustomClaims() {
         return [];
     }
-
-
-    public $timestamps = true;
 }

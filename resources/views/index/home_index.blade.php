@@ -1,5 +1,5 @@
-@extends('index/index');
-@section('content');
+@extends('index/index')
+@section('content')
 <div class="col-sm-9">
     <h4><small>RECENT POSTS</small></h4>
     <hr>

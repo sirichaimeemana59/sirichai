@@ -59,7 +59,7 @@
                 <h4 class="modal-title">Register Form</h4>
             </div>
             <div class="modal-body">
-                {!! Form::model(null,array('url' => array('user/register_form'),'class'=>'form-horizontal create-store-form','id'=>'form_add','method'=>'post','enctype'=>'multipart/form-data')) !!}
+                {!! Form::model(null,array('url' => array('/register'),'class'=>'form-horizontal create-store-form','id'=>'form_add','method'=>'post','enctype'=>'multipart/form-data')) !!}
 
                 <div class="form-group">
                     <label for="firstname">First Name :</label>
@@ -89,7 +89,7 @@
 
                 <div class="form-group">
                     <label for="confirm_password">Confirm Your Password :</label>
-                    <input type="password" name="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
+                    <input type="password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
                 </div>
 
                 <div class="form-group">
